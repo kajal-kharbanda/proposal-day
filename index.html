@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal Day</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .teddies {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .teddy {
+            width: 150px;
+            height: 150px;
+        }
+        .question {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+        }
+        .yes {
+            background-color: #ff4d79;
+            color: white;
+        }
+        .no {
+            background-color: #999;
+            color: white;
+            position: absolute;
+        }
+        .message {
+            font-size: 22px;
+            color: #ff4d79;
+            display: none;
+            margin-top: 20px;
+        }
+        .lyrics {
+            font-size: 20px;
+            margin-top: 30px;
+            color: #d6336c;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="teddies" id="teddyContainer">
+            <img src="teddy_boy.avif" alt="Teddy Boy" class="teddy">
+            <img src="teddy female.png" alt="Teddy Girl" class="teddy">
+        </div>
+        <p class="question">Will you be mine? 💖</p>
+        <div class="buttons" id="buttonsContainer">
+            <button class="btn yes" onclick="showMessage()">Yes</button>
+            <button class="btn no" onmouseover="moveNoButton()">No</button>
+        </div>
+        <p class="message" id="message">Yay! 💕 You made me the happiest! 🥰</p>
+        <p class="lyrics" id="lyrics">
+            Pehli nazar mein<br>
+            Kaise jaado kar diya<br>
+            Tera ban baita hai<br>
+            Mera jiya<br><br>
+            Jaane kya hoga<br>
+            Kya hoga kya pata<br>
+            Is pal ko milke<br>
+            Aa jee le zara<br><br>
+            Mein hoon yahan<br>
+            Tu hai yahan<br>
+            Meri bahon mein aa<br>
+            Aa bhi ja<br><br>
+            O jaan-e-jaan<br>
+            Dono jahan<br>
+            Meri bahon mein aa<br>
+            Bhool Ja aa tu
+        </p>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.querySelector('.message').style.display = 'block';
+            document.getElementById('teddyContainer').innerHTML = '<img src="teddy kissing.gif" alt="Couple Teddy Kissing" class="teddy">';
+            document.getElementById('lyrics').style.display = 'block';
+            document.getElementById('buttonsContainer').style.display = 'none';
+        }
+
+        function moveNoButton() {
+            const noButton = document.querySelector('.no');
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 100);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
